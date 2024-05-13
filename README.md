@@ -50,6 +50,7 @@ select count(*) from samplesuperstore;
 -- Scenario 2-- Sales Distribution by Category: 
 
 -- Analyze sales distribution across different categories to identify top-selling categories.
+        
         SELECT 
               Category,
               SUM(Sales) AS TotalSales
@@ -100,6 +101,7 @@ select count(*) from samplesuperstore;
 -- Scenario 6 -- Discount Impact on Profit: 
 
 -- Investigate the impact of discounts on profit.
+           
            SELECT 
                 Discount,
                 AVG(Profit) AS AverageProfit
