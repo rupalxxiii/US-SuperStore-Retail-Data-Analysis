@@ -24,26 +24,23 @@ Microsoft Power Bi
 
 # data Analysis Using SqL
 
-Create database us_retail_superstore;
-
-use us_retail_superstore;
+  Create database us_retail_superstore;
+  use us_retail_superstore;
 
 -- drop table samplesuperstore if exist;
-
 select * from samplesuperstore;
-
 select count(*) from samplesuperstore;
 
 -- Scenario 1 -- Summary Statistics: 
 -- Obtain summary statistics such as total sales, average sales, total profit, average profit, etc., 
 -- to understand the overall performance.
 
-SELECT 
+ SELECT 
     SUM(Sales) AS TotalSales,
     AVG(Sales) AS AverageSales,
     SUM(Profit) AS TotalProfit,
     AVG(Profit) AS AverageProfit
-FROM  samplesuperstore;
+ FROM  samplesuperstore;
 
 
 -- Scenario 2-- Sales Distribution by Category: 
