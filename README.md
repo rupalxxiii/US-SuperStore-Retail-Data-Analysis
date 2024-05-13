@@ -24,15 +24,20 @@ Microsoft Power Bi
 
 # data Analysis Using SqL
 
-  Create database us_retail_superstore;
-  use us_retail_superstore;
+Create database us_retail_superstore;
+
+use us_retail_superstore;
 
 -- drop table samplesuperstore if exist;
-select * from samplesuperstore;
-select count(*) from samplesuperstore;
 
+select * from samplesuperstore;
+
+select count(*) from samplesuperstore;
+     
 -- Scenario 1 -- Summary Statistics: 
+
 -- Obtain summary statistics such as total sales, average sales, total profit, average profit, etc., 
+
 -- to understand the overall performance.
 
  SELECT 
@@ -42,78 +47,79 @@ select count(*) from samplesuperstore;
     AVG(Profit) AS AverageProfit
  FROM  samplesuperstore;
 
-
 -- Scenario 2-- Sales Distribution by Category: 
--- Analyze sales distribution across different categories to identify top-selling categories.
 
-SELECT 
+-- Analyze sales distribution across different categories to identify top-selling categories.
+ SELECT 
     Category,
     SUM(Sales) AS TotalSales
-FROM 
+ FROM 
     samplesuperstore
-GROUP BY 
+ GROUP BY 
     Category
-ORDER BY 
+ ORDER BY 
     TotalSales DESC;
-    
-    
+
 -- Scenario 3 -- Top Selling Products: 
+
 -- Identify the top-selling products based on sales quantity or revenue.
 
 desc samplesuperstore;
 
--- Scenario 4 -- ALTER TABLE samplesuperstore
+-- ALTER TABLE samplesuperstore
+
 -- RENAME COLUMN Sub-Categry TO sub_Category;                 giving error
 
 ALTER TABLE samplesuperstore
+
 CHANGE COLUMN `Sub-Category` sub_Category varchar(50);
- 
-SELECT 
+
+ SELECT 
     Sub_Category,
     SUM(Quantity) AS TotalQuantity,
     SUM(Sales) AS TotalSales
-FROM 
+ FROM 
     samplesuperstore
-GROUP BY 
+ GROUP BY 
     Sub_Category
-ORDER BY 
+ ORDER BY 
     TotalSales DESC;
-    
-    
- -- Scenario 5 -- Profit Analysis by Segment: 
- -- Analyze profit across different market segments. 
+
+-- Scenario 5 -- Profit Analysis by Segment: 
+
+-- Analyze profit across different market segments. 
  
- SELECT 
+  SELECT 
     Segment,
     SUM(Profit) AS TotalProfit
-FROM 
+ FROM 
     samplesuperstore
-GROUP BY 
+ GROUP BY 
     Segment;
 
-
 -- Scenario 6 -- Discount Impact on Profit: 
--- Investigate the impact of discounts on profit.
 
-SELECT 
+-- Investigate the impact of discounts on profit.
+ SELECT 
     Discount,
     AVG(Profit) AS AverageProfit
-FROM 
+ FROM 
     samplesuperstore
-GROUP BY 
+ GROUP BY 
     Discount
-ORDER BY 
+ ORDER BY 
     Discount;
 
 -- Scenario 7-- Geographical Analysis: 
+
 -- Analyze sales performance by country, city, or region.
 
-SELECT 
+ SELECT 
     Country,
     SUM(Sales) AS TotalSales
-FROM 
+ FROM 
     samplesuperstore
-GROUP BY 
+ GROUP BY 
     Country
-ORDER BY 
+ ORDER BY 
     TotalSales DESC;
