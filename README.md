@@ -40,25 +40,25 @@ select count(*) from samplesuperstore;
 
 -- to understand the overall performance.
 
- SELECT 
-    SUM(Sales) AS TotalSales,
-    AVG(Sales) AS AverageSales,
-    SUM(Profit) AS TotalProfit,
-    AVG(Profit) AS AverageProfit
- FROM  samplesuperstore;
+     SELECT 
+       SUM(Sales) AS TotalSales,
+       AVG(Sales) AS AverageSales,
+       SUM(Profit) AS TotalProfit,
+       AVG(Profit) AS AverageProfit
+     FROM  samplesuperstore;
 
 -- Scenario 2-- Sales Distribution by Category: 
 
 -- Analyze sales distribution across different categories to identify top-selling categories.
- SELECT 
-    Category,
-    SUM(Sales) AS TotalSales
- FROM 
-    samplesuperstore
- GROUP BY 
-    Category
- ORDER BY 
-    TotalSales DESC;
+        SELECT 
+              Category,
+          SUM(Sales) AS TotalSales
+        FROM 
+          samplesuperstore
+        GROUP BY 
+          Category
+        ORDER BY 
+          TotalSales DESC;
 
 -- Scenario 3 -- Top Selling Products: 
 
